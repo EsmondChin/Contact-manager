@@ -1,21 +1,59 @@
-// 动态生成联系人信息
-document.addEventListener("DOMContentLoaded", () => {
-  const contacts = [
-    { name: "John Doe", email: "john@example.com" },
-    { name: "Jane Doe", email: "jane@example.com" },
-  ];
+// Ensure the script does not crash in restricted environments
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    // Safely check localStorage support
+    if (typeof localStorage === 'undefined' || !window.localStorage) {
+      console.warn('LocalStorage is not supported or is blocked.');
+      return;
+    }
 
-  const contactsContainer = document.getElementById("contacts");
+    // Default contact data
+    const defaultContacts = [
+      { name: 'John Doe', email: 'john@example.com' },
+      { name: 'Jane Doe', email: 'jane@example.com' }
+    ];
 
-  contacts.forEach(contact => {
-    const contactCard = document.createElement("div");
-    contactCard.className = "contact-card";
+    // Fetch stored contacts or use defaults
+    const getContacts = () => {
+      try {
+        const contacts = localStorage.getItem('contacts');
+        return contacts ? JSON.parse(contacts) : defaultContacts;
+      } catch (error) {
+        console.error('Error reading contacts from localStorage:', error);
+        return defaultContacts;
+      }
+    };
 
-    const contactInfo = `
-      <strong>${contact.name}</strong> - <a href="mailto:${contact.email}">${contact.email}</a>
-    `;
+    // Save contacts to localStorage
+    const saveContacts = (contacts) => {
+      try {
+        localStorage.setItem('contacts', JSON.stringify(contacts));
+      } catch (error) {
+        console.error('Error saving contacts to localStorage:', error);
+      }
+    };
 
-    contactCard.innerHTML = contactInfo;
-    contactsContainer.appendChild(contactCard);
-  });
+    // Render contacts in the DOM
+    const renderContacts = (contacts) => {
+      const container = document.getElementById('contacts');
+      container.innerHTML = '';
+      contacts.forEach(contact => {
+        const contactEl = document.createElement('div');
+        contactEl.textContent = `${contact.name} - ${contact.email}`;
+        contactEl.style.margin = '0.5em 0';
+        container.appendChild(contactEl);
+      });
+    };
+
+    // Initialize app
+    const contacts = getContacts();
+    renderContacts(contacts);
+
+    // Example: Add a new contact and save
+    const newContact = { name: 'Alice Smith', email: 'alice@example.com' };
+    contacts.push(newContact);
+    saveContacts(contacts);
+  } catch (error) {
+    console.error('Error initializing the app:', error);
+  }
 });
