@@ -1,32 +1,16 @@
-let contacts = [];
+document.addEventListener("DOMContentLoaded", function() {
+    const contactList = document.getElementById("contact-list");
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('add-contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        addContact(name, phone);
-        document.getElementById('name').value = '';
-        document.getElementById('phone').value = '';
-    });
+    // 示例联系人数据
+    const contacts = [
+        { name: "John Doe", phone: "+1234567890" },
+        { name: "Jane Smith", phone: "+9876543210" }
+    ];
 
-    document.getElementById('search-bar').addEventListener('input', function(event) {
-        const query = event.target.value.toLowerCase();
-        renderContacts(contacts.filter(contact => contact.name.toLowerCase().includes(query)));
+    // 动态加载联系人
+    contacts.forEach(contact => {
+        const li = document.createElement("li");
+        li.textContent = `${contact.name} - ${contact.phone}`;
+        contactList.appendChild(li);
     });
 });
-
-function addContact(name, phone) {
-    contacts.push({ name, phone });
-    renderContacts(contacts);
-}
-
-function renderContacts(filteredContacts) {
-    const list = document.getElementById('contact-list');
-    list.innerHTML = '';
-    filteredContacts.forEach(contact => {
-        const li = document.createElement('li');
-        li.textContent = `${contact.name} - ${contact.phone}`;
-        list.appendChild(li);
-    });
-}
