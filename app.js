@@ -1,28 +1,19 @@
-// Sample contacts data
-const contacts = [
-  { name: "John Doe", email: "john@example.com" },
-  { name: "Jane Doe", email: "jane@example.com" },
-];
-
-// Function to render contacts safely
-function renderContacts() {
-  const contactList = document.getElementById("contact-list");
-  if (!contactList) {
-    console.error("Contact list element not found.");
-    return;
-  }
-
-  contactList.innerHTML = ""; // Clear existing content
-
-  contacts.forEach((contact) => {
-    const contactItem = document.createElement("div");
-    contactItem.className = "contact-item";
-    contactItem.innerHTML = `<strong>${contact.name}</strong> - ${contact.email}`;
-    contactList.appendChild(contactItem);
-  });
-}
-
-// Initialize the page
+// Safely manage contact data
 document.addEventListener("DOMContentLoaded", () => {
-  renderContacts();
+  const contacts = [
+    { name: "John Doe", email: "john@example.com" },
+    { name: "Jane Doe", email: "jane@example.com" },
+  ];
+
+  const contactsContainer = document.getElementById("contacts");
+
+  // Dynamically load contact list
+  if (contactsContainer) {
+    contacts.forEach((contact) => {
+      const contactElement = document.createElement("div");
+      contactElement.classList.add("contact");
+      contactElement.innerHTML = `<strong>${contact.name}</strong> - ${contact.email}`;
+      contactsContainer.appendChild(contactElement);
+    });
+  }
 });
