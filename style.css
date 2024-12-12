@@ -1,38 +1,43 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
 }
 
 header {
-  background-color: #007bff;
-  color: #fff;
-  padding: 1rem 0;
+  background: #007bff;
+  color: white;
   text-align: center;
+  padding: 1rem;
 }
 
 main {
-  padding: 2rem;
-  text-align: center;
-}
-
-#contacts {
-  margin: 2rem auto;
-  padding: 1rem;
-  background: #fff;
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  margin-top: 20px;
+  padding: 10px 0;
+  background: #333;
+  color: white;
+}
+
+#contacts {
+  margin-top: 20px;
+}
+
+.contact-card {
+  background: #e9ecef;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
 }
