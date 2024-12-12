@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+https://github.com/EsmondChin/Contact-manager/edit/main/.github/workflows/jekyll-docker.yml#
 jobs:
   build:
 
@@ -16,5 +16,5 @@ jobs:
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
-        -v ${{ github.workspace }}/docs:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \ \
+        -v ${{ github.workspace }}/docs:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
