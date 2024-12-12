@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self';">
-  <title>联系人管理系统</title>
+  <title>Contact Manager</title>
+  <!-- CSP Header Example -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>欢迎来到联系人管理系统</h1>
+    <h1>Welcome to Contact Manager</h1>
+    <p>Manage your contacts easily with this simple site.</p>
   </header>
   <main>
-    <p>使用这个简单的网站轻松管理您的联系人。</p>
-    <div id="contacts"></div>
+    <div id="contacts">
+      <!-- Contacts will be dynamically added here -->
+    </div>
   </main>
   <footer>
-    <p>&copy; 2024 联系人管理系统. 保留所有权利。</p>
+    <p>&copy; 2024 Contact Manager. All rights reserved.</p>
   </footer>
   <script src="app.js"></script>
 </body>
