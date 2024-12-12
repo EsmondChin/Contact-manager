@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact Manager</title>
-    <!-- 加载修正后的 CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- 确保 style.css 位于根目录 -->
 </head>
 <body>
     <header>
@@ -14,11 +12,12 @@
     </header>
     <main>
         <p>Manage your contacts easily with this simple site.</p>
+        <!-- 确保该 ID 在 app.js 中被正确引用 -->
+        <div id="contact-container"></div>
     </main>
     <footer>
         <p>&copy; 2024 Contact Manager. All rights reserved.</p>
     </footer>
-    <!-- 加载修正后的 JS -->
-    <script src="app.js"></script>
+    <script src="app.js"></script> <!-- 确保 app.js 位于根目录 -->
 </body>
 </html>
