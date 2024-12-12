@@ -1,16 +1,36 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const contactList = document.getElementById("contact-list");
+document.addEventListener("DOMContentLoaded", () => {
+    // 获取容器
+    const contactContainer = document.querySelector("#contact-container");
 
-    // 示例联系人数据
-    const contacts = [
-        { name: "John Doe", phone: "+1234567890" },
-        { name: "Jane Smith", phone: "+9876543210" }
-    ];
+    // 如果容器存在，则动态加载内容
+    if (contactContainer) {
+        const contacts = [
+            { name: "John Doe", email: "john@example.com" },
+            { name: "Jane Smith", email: "jane@example.com" }
+        ];
 
-    // 动态加载联系人
-    contacts.forEach(contact => {
-        const li = document.createElement("li");
-        li.textContent = `${contact.name} - ${contact.phone}`;
-        contactList.appendChild(li);
-    });
+        const list = document.createElement("ul");
+        list.style.listStyleType = "none";
+        list.style.padding = "0";
+
+        contacts.forEach(contact => {
+            const listItem = document.createElement("li");
+            listItem.style.padding = "10px";
+            listItem.style.borderBottom = "1px solid #ddd";
+            listItem.innerHTML = `<strong>${contact.name}</strong><br>${contact.email}`;
+            list.appendChild(listItem);
+        });
+
+        contactContainer.appendChild(list);
+    } else {
+        console.error("Contact container not found.");
+    }
+
+    // 检查 LocalStorage 访问是否正常
+    try {
+        localStorage.setItem("testKey", "testValue");
+        console.log("Storage test successful:", localStorage.getItem("testKey"));
+    } catch (error) {
+        console.error("Storage access error:", error.message);
+    }
 });
