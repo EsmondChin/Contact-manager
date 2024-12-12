@@ -1,12 +1,14 @@
 body {
   font-family: Arial, sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  color: #333;
 }
 
 header {
-  background-color: #007bff;
+  background: #007BFF;
   color: #fff;
   padding: 1rem 0;
   text-align: center;
@@ -17,19 +19,21 @@ main {
   text-align: center;
 }
 
-#contact-list {
-  margin-top: 1rem;
+#contacts {
+  margin: 2rem auto;
   padding: 1rem;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  display: inline-block;
+  background: #fff;
   border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
 }
 
 footer {
   text-align: center;
-  margin-top: 2rem;
-  padding: 1rem 0;
-  background-color: #333;
+  background: #333;
   color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
