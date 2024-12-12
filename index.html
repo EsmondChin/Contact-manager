@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Content Security Policy 调整 -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self';">
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self';">
   <title>联系人管理系统</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,9 +14,7 @@
   </header>
   <main>
     <p>使用这个简单的网站轻松管理您的联系人。</p>
-    <div id="contacts">
-      <!-- 联系人信息将动态加载到这里 -->
-    </div>
+    <div id="contacts"></div>
   </main>
   <footer>
     <p>&copy; 2024 联系人管理系统. 保留所有权利。</p>
