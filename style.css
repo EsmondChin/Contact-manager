@@ -1,17 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #f0f0f0;
     color: #333;
 }
 
 header {
-    background: #007bff;
-    color: #fff;
-    padding: 1rem 0;
+    background-color: #0078d7;
+    color: white;
     text-align: center;
+    padding: 1rem;
 }
 
 main {
@@ -20,27 +19,21 @@ main {
 }
 
 footer {
-    background: #333;
-    color: #fff;
+    background-color: #333;
+    color: white;
     text-align: center;
-    padding: 1rem 0;
-    position: absolute;
+    padding: 1rem;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-#contact-container ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem auto;
-    max-width: 400px;
-    text-align: left;
-}
-
-#contact-container li {
-    background: #fff;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
+#contact-container {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    display: inline-block;
+    text-align: left;
 }
