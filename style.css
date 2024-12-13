@@ -2,33 +2,45 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
 }
 
 header {
-  background-color: #007BFF;
-  color: #fff;
-  padding: 1em;
+  background: #007bff;
+  color: white;
+  padding: 10px;
   text-align: center;
 }
 
-main {
-  padding: 2em;
+#contactsList {
+  margin: 20px;
 }
 
-#contacts {
-  margin: 1em auto;
-  padding: 1em;
-  background: #fff;
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.contact {
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  max-width: 400px;
+  margin: 10px 0;
 }
 
-footer {
-  text-align: center;
-  padding: 1em;
-  background-color: #333;
-  color: #fff;
+a {
+  text-decoration: none;
+  color: white;
+  background-color: #28a745;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: #218838;
 }
